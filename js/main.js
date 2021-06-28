@@ -4,6 +4,11 @@ import GameView from "./GameView.js";
 let game = new Game();
 let gameView = new GameView();
 
+document.querySelector(".restart").addEventListener("click", (e) => {
+  console.log("New Game");
+  onRestartClick();
+});
+
 let titles = document.querySelectorAll(".board-tile");
 titles.forEach((tile) => {
   tile.addEventListener("click", () => {
@@ -12,11 +17,13 @@ titles.forEach((tile) => {
 });
 
 function onTileClick(i) {
-  // do something
-  // make a move
   game.makeMove(i);
-  // updateBoard
   gameView.upDateBoard(game);
-  // change turn
-  //   game.nextTurn();
 }
+
+function onRestartClick() {
+  game = new Game();
+  gameView.upDateBoard(game);
+}
+
+gameView.upDateBoard(game);

@@ -13,9 +13,10 @@ body {
   margin: 0 auto;
   max-width: 1440px;
   height: 100vh;
+  padding: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .restart {
@@ -29,6 +30,10 @@ body {
   justify-content: center;
   transition: all 0.3s ease;
   font-weight: bold;
+}
+
+.title {
+  max-width: 500px;
 }
 
 h1 {
@@ -55,13 +60,23 @@ h1 {
   font-size: 24px;
 }
 
-.header .player-x {
+.header .player-X {
   flex: 1;
   border-bottom: 5px solid #eee;
   padding-bottom: 8px;
 }
 
-.header .player-o {
+.player-X.active {
+  color: #43bed7;
+  border-color: #43bed7;
+}
+
+.player-O.active {
+  color: #d7bafb;
+  border-color: #d7bafb;
+}
+
+.header .player-O {
   flex: 1;
   padding-bottom: 8px;
   border-bottom: 5px solid #eee;
@@ -97,8 +112,27 @@ h1 {
   background-color: #eee;
 }
 
-@media (max-width: 768px) {
+.tile-x {
+  color: #43bed7;
+}
+
+.tile-o {
+  color: #d7bafb;
+}
+
+.tile-winner span {
+  color: #23ce68;
+}
+
+@media only screen and (max-width: 1200px) {
   .wrapper {
     flex-direction: column;
+  }
+
+  .left {
+    margin-bottom: 50px;
+  }
+  h1 {
+    font-size: 1.8rem;
   }
 }

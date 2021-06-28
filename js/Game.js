@@ -2,7 +2,6 @@ export default class Game {
   constructor() {
     this.turn = "X";
     this.board = new Array(9).fill(null);
-    console.log(this.board);
   }
 
   nextTurn() {
@@ -23,7 +22,6 @@ export default class Game {
     }
     this.board[i] = this.turn;
     let winningCombination = this.findWinningCombination();
-    console.log("This is winner: ", winningCombination);
 
     if (!winningCombination) {
       this.nextTurn();
