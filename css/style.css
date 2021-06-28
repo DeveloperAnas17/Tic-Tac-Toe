@@ -42,9 +42,6 @@ h1 {
   cursor: pointer;
 }
 
-.right {
-}
-
 .game {
   display: flex;
   flex-direction: column;
